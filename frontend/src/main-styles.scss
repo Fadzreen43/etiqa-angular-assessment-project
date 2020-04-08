@@ -5,6 +5,8 @@
 
 $turquoise: #44ddd0;
 $green: #27d7a1;
+$blue-sky: #03c2fc;
+$blue-bold: #036ffc;
 $light-green: #45f69e; 
 $dark-green: rgb(0, 100, 80);
 
@@ -13,9 +15,9 @@ $light: #f8f8f8;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
-$primary: $green;
+$primary: $blue-bold;
 
-$link: $turquoise;
+$link: $blue-sky;
 
 
 // Update some of Bulma's component variables
@@ -28,7 +30,7 @@ $input-shadow: none;
 // Set custom global styles (will be applied to whole app)
 
 html {
-    background: linear-gradient(to right top, $turquoise, $green);
+    background: linear-gradient(to right top, $blue-sky, $blue-bold);
 }
 
 html, body {
@@ -57,6 +59,13 @@ html, body {
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.form-title {
+    font-family: 'Lato';
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .white-box {

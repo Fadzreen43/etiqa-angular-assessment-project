@@ -3,7 +3,7 @@
 
     <div class="sidebar has-background-white">
       <h1 class="title has-text-primary">
-        Lists
+        Username
       </h1>
 
       <div class="list-menu">
@@ -21,7 +21,7 @@
       <div *ngIf="tasks">
         <div class="top-bar">
           <h1 class="title has-text-primary">
-            Tasks
+            User Details
           </h1>
           <div class="dropdown is-hoverable is-right">
             <div class="dropdown-trigger">
@@ -44,34 +44,72 @@
           </div>
         </div>
 
-        <!-- Task Elements -->
+        
+        <!-- Task Email -->
+        <label class="form-title" *ngIf="tasks.length != 0"> Email
         <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
           <div class="task-text">
-            <p>{{ task.title }}</p>
-          </div>
-          <div class="task-buttons">
-
-            <button class="button" [routerLink]="['/lists', selectedListId, 'edit-task', task._id]">
-              <div class="icon">
-                <i class="fas fa-edit"></i>
-              </div>
-            </button>
-
-            <button class="button is-danger" (click)="onDeleteTaskClick(task._id)" style="margin-left: 10px;">
-              <div class="icon">
-                <i class="fas fa-trash"></i>
-              </div>
-            </button>
-
+            <p>{{ task.email }}</p>
           </div>
         </div>
+      </label>
 
-        <h3 class="empty-state-text" *ngIf="tasks.length === 0">There are no tasks here! Click the add button to create
-          a new task.</h3>
+        <!-- Task Phone -->
+        <label class="form-title" *ngIf="tasks.length != 0"> Phone No.
+        <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
+          <div class="task-text">
+            <p>{{ task.phone }}</p>
+          </div>
+        </div>
+        </label>
 
-        <button routerLink="./new-task" class="circle-add-button button is-primary">
-          <img src="../../../assets/plus-icon.svg" class="has-text-white">
-        </button>
+        <!-- Task Skill -->
+        <label class="form-title" *ngIf="tasks.length != 0"> Skill
+        <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
+          <div class="task-text">
+            <p>{{ task.skill }}</p>
+          </div>
+        </div>
+        </label>
+
+        <!-- Task Hobby -->
+        <label class="form-title" *ngIf="tasks.length != 0"> Hobby
+        <div class="task" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
+          <div class="task-text">
+            <p>{{ task.hobby }}</p>
+          </div>
+        </div>
+        </label>
+
+       
+        <!-- Edit Delete -->
+          <div class="task-delete-edit" *ngFor="let task of tasks" (click)="onTaskClick(task)" [ngClass]="{ 'completed': task.completed }">
+            <div class="task-text-dump" style="flex-grow: 1;">
+              <!-- <p></p> -->
+            </div>
+            <div class="task-buttons">
+              <button class="button" [routerLink]="['/lists', selectedListId, 'edit-task', task._id]">
+                <div class="icon">
+                  <i class="fas fa-edit"></i>
+                </div>
+              </button>
+  
+              <button class="button is-danger" (click)="onDeleteTaskClick(task._id)" style="margin-left: 10px;">
+                <div class="icon">
+                  <i class="fas fa-trash"></i>
+                </div>
+              </button>
+  
+            </div>
+          </div>
+
+        <h3 class="empty-state-text" *ngIf="tasks.length === 0">There are no users details here! Click the add button to create
+          a new users details.</h3>
+        
+          <button routerLink="./new-task" class="circle-add-button button is-primary" *ngIf="tasks.length === 0">
+            <img src="../../../assets/plus-icon.svg" class="has-text-white">
+          </button>
+
       </div>
 
       <div *ngIf="!tasks">

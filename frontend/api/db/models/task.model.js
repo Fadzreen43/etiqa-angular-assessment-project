@@ -1,7 +1,25 @@
 const mongoose = require('mongoose');
 
 const TaskSchema = new mongoose.Schema({
-    title: {
+    email: {
+        type: String,
+        required: true,
+        minlength: 1,
+        trim: true
+    },
+    phone: {
+        type: String,
+        required: true,
+        minlength: 1,
+        trim: true
+    },
+    skill: {
+        type: String,
+        required: true,
+        minlength: 1,
+        trim: true
+    },
+    hobby: {
         type: String,
         required: true,
         minlength: 1,
