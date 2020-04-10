@@ -3,12 +3,15 @@
 This project using Angular 7 with NodeJS and MongoDB. To setup first u should run 'npm install' in frontend file & api file. 
 
 Frontend File : Angular File
+
 Api File : Node.js 
 
 to run angular: cd /frontend -> run command "ng serve"
 
 to run angular: cd /frontend/api -> run command "nodemon app.js"
+
 -> need to install "npm install nodemon"
+
 -> need to install "npm install mongoose --save"
 
 1.LIST OF USERNAME AND USERS DETAILS
